@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>AdaptadorBebidas.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+AdaptadorBebidas.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">appjava</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Context</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.*;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.*;</span>
+
+<span class="s0">public class </span><span class="s1">AdaptadorBebidas </span><span class="s0">extends </span><span class="s1">BaseAdapter </span><span class="s2">{</span>
+
+    <span class="s1">Context context</span><span class="s2">;</span>
+    <span class="s1">String</span><span class="s2">[] </span><span class="s1">nombres</span><span class="s2">;</span>
+    <span class="s0">int</span><span class="s2">[] </span><span class="s1">imagenes</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">AdaptadorBebidas</span><span class="s2">(</span><span class="s1">Context context</span><span class="s2">, </span><span class="s1">String</span><span class="s2">[] </span><span class="s1">nombres</span><span class="s2">, </span><span class="s0">int</span><span class="s2">[] </span><span class="s1">imagenes</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">context </span><span class="s2">= </span><span class="s1">context</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nombres </span><span class="s2">= </span><span class="s1">nombres</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">imagenes </span><span class="s2">= </span><span class="s1">imagenes</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public int </span><span class="s1">getCount</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">nombres</span><span class="s2">.</span><span class="s1">length</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">Object getItem</span><span class="s2">(</span><span class="s0">int </span><span class="s1">i</span><span class="s2">) {</span>
+        <span class="s0">return </span><span class="s1">nombres</span><span class="s2">[</span><span class="s1">i</span><span class="s2">];</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public long </span><span class="s1">getItemId</span><span class="s2">(</span><span class="s0">int </span><span class="s1">i</span><span class="s2">) {</span>
+        <span class="s0">return </span><span class="s1">i</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">View getView</span><span class="s2">(</span><span class="s0">int </span><span class="s1">i</span><span class="s2">, </span><span class="s1">View view</span><span class="s2">, </span><span class="s1">ViewGroup parent</span><span class="s2">) {</span>
+
+        <span class="s1">LayoutInflater inflater </span><span class="s2">= </span><span class="s1">LayoutInflater</span><span class="s2">.</span><span class="s1">from</span><span class="s2">(</span><span class="s1">context</span><span class="s2">);</span>
+        <span class="s1">View vista </span><span class="s2">= </span><span class="s1">inflater</span><span class="s2">.</span><span class="s1">inflate</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">grid_item</span><span class="s2">, </span><span class="s0">null</span><span class="s2">);</span>
+
+        <span class="s1">ImageView img </span><span class="s2">= </span><span class="s1">vista</span><span class="s2">.</span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">img</span><span class="s2">);</span>
+        <span class="s1">TextView txt </span><span class="s2">= </span><span class="s1">vista</span><span class="s2">.</span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">txt</span><span class="s2">);</span>
+
+        <span class="s1">img</span><span class="s2">.</span><span class="s1">setImageResource</span><span class="s2">(</span><span class="s1">imagenes</span><span class="s2">[</span><span class="s1">i</span><span class="s2">]);</span>
+        <span class="s1">txt</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">nombres</span><span class="s2">[</span><span class="s1">i</span><span class="s2">]);</span>
+
+        <span class="s0">return </span><span class="s1">vista</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

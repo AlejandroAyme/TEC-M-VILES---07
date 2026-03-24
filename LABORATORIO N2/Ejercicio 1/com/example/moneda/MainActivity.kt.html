@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">moneda</span>
+
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.*</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span>
+
+<span class="s0">class </span><span class="s1">MainActivity : AppCompatActivity</span><span class="s2">() {</span>
+
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">editCantidad: EditText</span>
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">spinnerOrigen: Spinner</span>
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">spinnerDestino: Spinner</span>
+
+    <span class="s1">private </span><span class="s0">val </span><span class="s1">monedas </span><span class="s2">= </span><span class="s1">arrayOf</span><span class="s2">(</span>
+        <span class="s3">&quot;Soles&quot;</span><span class="s2">, </span><span class="s3">&quot;Dólares&quot;</span><span class="s2">, </span><span class="s3">&quot;Euros&quot;</span><span class="s2">, </span><span class="s3">&quot;Libras&quot;</span><span class="s2">,</span>
+        <span class="s3">&quot;Rupias&quot;</span><span class="s2">, </span><span class="s3">&quot;Reales&quot;</span><span class="s2">, </span><span class="s3">&quot;Pesos&quot;</span><span class="s2">, </span><span class="s3">&quot;Yuan&quot;</span><span class="s2">, </span><span class="s3">&quot;Yen&quot;</span>
+    <span class="s2">)</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState: Bundle?</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">)</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_main</span><span class="s2">)</span>
+
+        <span class="s1">editCantidad </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">editCantidad</span><span class="s2">)</span>
+        <span class="s1">spinnerOrigen </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">spinnerOrigen</span><span class="s2">)</span>
+        <span class="s1">spinnerDestino </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">spinnerDestino</span><span class="s2">)</span>
+
+        <span class="s0">val </span><span class="s1">adapter </span><span class="s2">= </span><span class="s1">ArrayAdapter</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s1">android</span><span class="s2">.</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">simple_spinner_item</span><span class="s2">, </span><span class="s1">monedas</span><span class="s2">)</span>
+        <span class="s1">adapter</span><span class="s2">.</span><span class="s1">setDropDownViewResource</span><span class="s2">(</span><span class="s1">android</span><span class="s2">.</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">simple_spinner_dropdown_item</span><span class="s2">)</span>
+
+        <span class="s1">spinnerOrigen</span><span class="s2">.</span><span class="s1">adapter </span><span class="s2">= </span><span class="s1">adapter</span>
+        <span class="s1">spinnerDestino</span><span class="s2">.</span><span class="s1">adapter </span><span class="s2">= </span><span class="s1">adapter</span>
+    <span class="s2">}</span>
+
+    <span class="s0">fun </span><span class="s1">miClicManejador</span><span class="s2">(</span><span class="s1">view: View</span><span class="s2">) {</span>
+        <span class="s1">convertir</span><span class="s2">()</span>
+    <span class="s2">}</span>
+
+    <span class="s1">private </span><span class="s0">fun </span><span class="s1">convertir</span><span class="s2">() {</span>
+
+        <span class="s0">val </span><span class="s1">texto </span><span class="s2">= </span><span class="s1">editCantidad</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">texto</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()) {</span>
+            <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s3">&quot;Ingresa cantidad&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_LONG</span><span class="s2">).</span><span class="s1">show</span><span class="s2">()</span>
+            <span class="s0">return</span>
+        <span class="s2">}</span>
+
+        <span class="s0">val </span><span class="s1">cantidad </span><span class="s2">= </span><span class="s1">texto</span><span class="s2">.</span><span class="s1">toDouble</span><span class="s2">()</span>
+
+        <span class="s0">val </span><span class="s1">origen </span><span class="s2">= </span><span class="s1">spinnerOrigen</span><span class="s2">.</span><span class="s1">selectedItem</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+        <span class="s0">val </span><span class="s1">destino </span><span class="s2">= </span><span class="s1">spinnerDestino</span><span class="s2">.</span><span class="s1">selectedItem</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+
+        <span class="s0">val </span><span class="s1">resultado </span><span class="s2">= </span><span class="s1">convertirMoneda</span><span class="s2">(</span><span class="s1">cantidad</span><span class="s2">, </span><span class="s1">origen</span><span class="s2">, </span><span class="s1">destino</span><span class="s2">)</span>
+
+        <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s3">&quot;</span><span class="s0">$</span><span class="s1">cantidad </span><span class="s0">$</span><span class="s1">origen </span><span class="s3">= </span><span class="s0">$</span><span class="s1">resultado </span><span class="s0">$</span><span class="s1">destino</span><span class="s3">&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_LONG</span><span class="s2">).</span><span class="s1">show</span><span class="s2">()</span>
+    <span class="s2">}</span>
+
+    <span class="s1">private </span><span class="s0">fun </span><span class="s1">convertirMoneda</span><span class="s2">(</span><span class="s1">cantidad: Double</span><span class="s2">, </span><span class="s1">origen: String</span><span class="s2">, </span><span class="s1">destino: String</span><span class="s2">)</span><span class="s1">: Double </span><span class="s2">{</span>
+
+        <span class="s4">// Convertimos todo a SOLES primero</span>
+        <span class="s0">val </span><span class="s1">enSoles </span><span class="s2">= </span><span class="s0">when </span><span class="s2">(</span><span class="s1">origen</span><span class="s2">) {</span>
+            <span class="s3">&quot;Soles&quot; </span><span class="s2">-&gt; </span><span class="s1">cantidad</span>
+            <span class="s3">&quot;Dólares&quot; </span><span class="s2">-&gt; </span><span class="s1">cantidad </span><span class="s2">* </span><span class="s5">3.65</span>
+            <span class="s3">&quot;Euros&quot; </span><span class="s2">-&gt; </span><span class="s1">cantidad </span><span class="s2">* </span><span class="s5">3.95</span>
+            <span class="s3">&quot;Libras&quot; </span><span class="s2">-&gt; </span><span class="s1">cantidad </span><span class="s2">* </span><span class="s5">4.60</span>
+            <span class="s3">&quot;Rupias&quot; </span><span class="s2">-&gt; </span><span class="s1">cantidad </span><span class="s2">* </span><span class="s5">0.044</span>
+            <span class="s3">&quot;Reales&quot; </span><span class="s2">-&gt; </span><span class="s1">cantidad </span><span class="s2">* </span><span class="s5">0.73</span>
+            <span class="s3">&quot;Pesos&quot; </span><span class="s2">-&gt; </span><span class="s1">cantidad </span><span class="s2">* </span><span class="s5">0.21</span>
+            <span class="s3">&quot;Yuan&quot; </span><span class="s2">-&gt; </span><span class="s1">cantidad </span><span class="s2">* </span><span class="s5">0.50</span>
+            <span class="s3">&quot;Yen&quot; </span><span class="s2">-&gt; </span><span class="s1">cantidad </span><span class="s2">* </span><span class="s5">0.025</span>
+            <span class="s0">else </span><span class="s2">-&gt; </span><span class="s1">cantidad</span>
+        <span class="s2">}</span>
+
+        <span class="s4">// Convertimos de SOLES a destino</span>
+        <span class="s0">return when </span><span class="s2">(</span><span class="s1">destino</span><span class="s2">) {</span>
+            <span class="s3">&quot;Soles&quot; </span><span class="s2">-&gt; </span><span class="s1">enSoles</span>
+            <span class="s3">&quot;Dólares&quot; </span><span class="s2">-&gt; </span><span class="s1">enSoles </span><span class="s2">/ </span><span class="s5">3.65</span>
+            <span class="s3">&quot;Euros&quot; </span><span class="s2">-&gt; </span><span class="s1">enSoles </span><span class="s2">/ </span><span class="s5">3.95</span>
+            <span class="s3">&quot;Libras&quot; </span><span class="s2">-&gt; </span><span class="s1">enSoles </span><span class="s2">/ </span><span class="s5">4.60</span>
+            <span class="s3">&quot;Rupias&quot; </span><span class="s2">-&gt; </span><span class="s1">enSoles </span><span class="s2">/ </span><span class="s5">0.044</span>
+            <span class="s3">&quot;Reales&quot; </span><span class="s2">-&gt; </span><span class="s1">enSoles </span><span class="s2">/ </span><span class="s5">0.73</span>
+            <span class="s3">&quot;Pesos&quot; </span><span class="s2">-&gt; </span><span class="s1">enSoles </span><span class="s2">/ </span><span class="s5">0.21</span>
+            <span class="s3">&quot;Yuan&quot; </span><span class="s2">-&gt; </span><span class="s1">enSoles </span><span class="s2">/ </span><span class="s5">0.50</span>
+            <span class="s3">&quot;Yen&quot; </span><span class="s2">-&gt; </span><span class="s1">enSoles </span><span class="s2">/ </span><span class="s5">0.025</span>
+            <span class="s0">else </span><span class="s2">-&gt; </span><span class="s1">enSoles</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>activity_main.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+activity_main.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;LinearLayout </span><span class="s1">xmlns:android</span><span class="s2">=&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="s1">xmlns:app</span><span class="s2">=&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+    <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:layout_height</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:background</span><span class="s2">=&quot;#E48A0E&quot;</span>
+    <span class="s1">android:backgroundTint</span><span class="s2">=&quot;#FBEF7C&quot;</span>
+    <span class="s1">android:backgroundTintMode</span><span class="s2">=&quot;screen&quot;</span>
+    <span class="s1">android:foregroundTint</span><span class="s2">=&quot;#6D1111&quot;</span>
+    <span class="s1">android:orientation</span><span class="s2">=&quot;vertical&quot;</span>
+    <span class="s1">android:padding</span><span class="s2">=&quot;20dp&quot;</span>
+    <span class="s1">android:visibility</span><span class="s2">=&quot;visible&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;EditText</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/editCantidad&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_marginBottom</span><span class="s2">=&quot;20dp&quot;</span>
+        <span class="s1">android:drawableTint</span><span class="s2">=&quot;#1B0303&quot;</span>
+        <span class="s1">android:hint</span><span class="s2">=&quot;@string/hint_cantidad&quot;</span>
+        <span class="s1">android:inputType</span><span class="s2">=&quot;numberDecimal&quot;</span>
+        <span class="s1">android:textAppearance</span><span class="s2">=&quot;@style/TextAppearance.AppCompat.Large&quot;</span>
+        <span class="s1">android:textColorHint</span><span class="s2">=&quot;#000000&quot;</span>
+        <span class="s1">android:textColorLink</span><span class="s2">=&quot;@color/black&quot;</span>
+        <span class="s1">android:textDirection</span><span class="s2">=&quot;locale&quot;</span>
+        <span class="s1">android:textSize</span><span class="s2">=&quot;34sp&quot;</span>
+        <span class="s1">android:textStyle</span><span class="s2">=&quot;bold|italic&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;Spinner</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/spinnerOrigen&quot;</span>
+        <span class="s1">style</span><span class="s2">=&quot;@style/Widget.AppCompat.Spinner&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_marginBottom</span><span class="s2">=&quot;10dp&quot;</span>
+        <span class="s1">android:backgroundTint</span><span class="s2">=&quot;#640F0F&quot;</span>
+        <span class="s1">android:backgroundTintMode</span><span class="s2">=&quot;add&quot;</span>
+        <span class="s1">android:foregroundTint</span><span class="s2">=&quot;#490909&quot;</span>
+        <span class="s1">android:foregroundTintMode</span><span class="s2">=&quot;src_atop&quot;</span>
+        <span class="s1">android:textAlignment</span><span class="s2">=&quot;inherit&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;Spinner</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/spinnerDestino&quot;</span>
+        <span class="s1">style</span><span class="s2">=&quot;@style/Widget.AppCompat.Spinner.DropDown&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_marginBottom</span><span class="s2">=&quot;20dp&quot;</span>
+        <span class="s1">android:backgroundTint</span><span class="s2">=&quot;#6A1B9A&quot;</span>
+        <span class="s1">android:backgroundTintMode</span><span class="s2">=&quot;screen&quot;</span>
+        <span class="s1">android:foregroundGravity</span><span class="s2">=&quot;bottom&quot;</span>
+        <span class="s1">android:foregroundTint</span><span class="s2">=&quot;#571515&quot;</span>
+        <span class="s1">android:foregroundTintMode</span><span class="s2">=&quot;screen&quot;</span>
+        <span class="s1">android:textAlignment</span><span class="s2">=&quot;viewStart&quot;</span>
+        <span class="s1">android:textDirection</span><span class="s2">=&quot;locale&quot;</span>
+        <span class="s1">android:visibility</span><span class="s2">=&quot;visible&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;Button</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/btnConvertir&quot;</span>
+        <span class="s1">style</span><span class="s2">=&quot;@style/Widget.AppCompat.Button.Small&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:background</span><span class="s2">=&quot;#6F110A&quot;</span>
+        <span class="s1">android:backgroundTint</span><span class="s2">=&quot;#ED1C1C&quot;</span>
+        <span class="s1">android:backgroundTintMode</span><span class="s2">=&quot;add&quot;</span>
+        <span class="s1">android:foregroundTint</span><span class="s2">=&quot;#521111&quot;</span>
+        <span class="s1">android:onClick</span><span class="s2">=&quot;miClicManejador&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;@string/convertir&quot;</span>
+        <span class="s1">android:textAppearance</span><span class="s2">=&quot;@style/TextAppearance.AppCompat.Large&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#FFF7F7&quot;</span>
+        <span class="s1">android:textColorLink</span><span class="s2">=&quot;#FF9800&quot;</span>
+        <span class="s1">app:iconTint</span><span class="s2">=&quot;#8BC34A&quot;</span>
+        <span class="s1">app:strokeColor</span><span class="s2">=&quot;#953D3D&quot; </span><span class="s0">/&gt;</span>
+
+<span class="s0">&lt;/LinearLayout&gt;</span></pre>
+</body>
+</html>

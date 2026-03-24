@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">pizzaapp</span>
+
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">GridView</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Toast</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span>
+
+<span class="s0">class </span><span class="s1">MainActivity : AppCompatActivity</span><span class="s2">() {</span>
+
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">gridView: GridView</span>
+
+    <span class="s1">private </span><span class="s0">val </span><span class="s1">nombres </span><span class="s2">= </span><span class="s1">arrayOf</span><span class="s2">(</span>
+        <span class="s3">&quot;Hawaiana&quot;</span><span class="s2">, </span><span class="s3">&quot;Pepperoni&quot;</span><span class="s2">, </span><span class="s3">&quot;Suprema&quot;</span><span class="s2">, </span><span class="s3">&quot;Vegetariana&quot;</span>
+    <span class="s2">)</span>
+
+    <span class="s1">private </span><span class="s0">val </span><span class="s1">imagenes </span><span class="s2">= </span><span class="s1">arrayOf</span><span class="s2">(</span>
+        <span class="s1">R</span><span class="s2">.</span><span class="s1">drawable</span><span class="s2">.</span><span class="s1">pizza1</span><span class="s2">,</span>
+        <span class="s1">R</span><span class="s2">.</span><span class="s1">drawable</span><span class="s2">.</span><span class="s1">pizza2</span><span class="s2">,</span>
+        <span class="s1">R</span><span class="s2">.</span><span class="s1">drawable</span><span class="s2">.</span><span class="s1">pizza3</span><span class="s2">,</span>
+        <span class="s1">R</span><span class="s2">.</span><span class="s1">drawable</span><span class="s2">.</span><span class="s1">pizza4</span>
+    <span class="s2">)</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState: Bundle?</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">)</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_main</span><span class="s2">)</span>
+
+        <span class="s1">gridView </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">gridView</span><span class="s2">)</span>
+
+        <span class="s0">val </span><span class="s1">adaptador </span><span class="s2">= </span><span class="s1">AdaptadorPizza</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s1">nombres</span><span class="s2">, </span><span class="s1">imagenes</span><span class="s2">)</span>
+        <span class="s1">gridView</span><span class="s2">.</span><span class="s1">adapter </span><span class="s2">= </span><span class="s1">adaptador</span>
+
+        <span class="s1">gridView</span><span class="s2">.</span><span class="s1">setOnItemClickListener </span><span class="s2">{ </span><span class="s1">_</span><span class="s2">, </span><span class="s1">_</span><span class="s2">, </span><span class="s1">position</span><span class="s2">, </span><span class="s1">_ </span><span class="s2">-&gt;</span>
+            <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s3">&quot;Elegiste: &quot; </span><span class="s2">+ </span><span class="s1">nombres</span><span class="s2">[</span><span class="s1">position</span><span class="s2">] + </span><span class="s3">&quot; 🍕&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">()</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
