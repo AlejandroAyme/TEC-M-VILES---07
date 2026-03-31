@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>SegundaActividad.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+SegundaActividad.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">ucsm</span><span class="s2">.</span><span class="s1">seguimiento</span>
+
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Log</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">ProgressBar</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span>
+
+<span class="s0">class </span><span class="s1">SegundaActividad : AppCompatActivity</span><span class="s2">() {</span>
+
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">progressBar: ProgressBar</span>
+    <span class="s1">private </span><span class="s0">val </span><span class="s1">TIMER_RUNTIME </span><span class="s2">= </span><span class="s3">10000</span>
+    <span class="s1">private </span><span class="s0">val </span><span class="s1">TAG </span><span class="s2">= </span><span class="s4">&quot;mensajeFinal&quot;</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState: Bundle?</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">)</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_segunda_actividad</span><span class="s2">)</span>
+
+        <span class="s1">progressBar </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">progressBar</span><span class="s2">)</span>
+
+        <span class="s1">Thread </span><span class="s2">{</span>
+            <span class="s0">var </span><span class="s1">tiempo </span><span class="s2">= </span><span class="s3">0</span>
+
+            <span class="s0">while </span><span class="s2">(</span><span class="s1">tiempo </span><span class="s2">&lt; </span><span class="s1">TIMER_RUNTIME</span><span class="s2">) {</span>
+                <span class="s1">Thread</span><span class="s2">.</span><span class="s1">sleep</span><span class="s2">(</span><span class="s3">200</span><span class="s2">)</span>
+                <span class="s1">tiempo </span><span class="s2">+= </span><span class="s3">200</span>
+
+                <span class="s1">runOnUiThread </span><span class="s2">{</span>
+                    <span class="s0">val </span><span class="s1">progreso </span><span class="s2">= </span><span class="s1">progressBar</span><span class="s2">.</span><span class="s1">max </span><span class="s2">* </span><span class="s1">tiempo </span><span class="s2">/ </span><span class="s1">TIMER_RUNTIME</span>
+                    <span class="s1">progressBar</span><span class="s2">.</span><span class="s1">progress </span><span class="s2">= </span><span class="s1">progreso</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+
+            <span class="s1">runOnUiThread </span><span class="s2">{</span>
+                <span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s1">TAG</span><span class="s2">, </span><span class="s4">&quot;Su barra de progreso acaba de cargar&quot;</span><span class="s2">)</span>
+            <span class="s2">}</span>
+
+        <span class="s2">}.</span><span class="s1">start</span><span class="s2">()</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

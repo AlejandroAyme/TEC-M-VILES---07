@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_inicio"
+        android:title="Inicio"/>
+
+    <item
+        android:id="@+id/nav_conversion"
+        android:title="Conversión"/>
+
+</menu>

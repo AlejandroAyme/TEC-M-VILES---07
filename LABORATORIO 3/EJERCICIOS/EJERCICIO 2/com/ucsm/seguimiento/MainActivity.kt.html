@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">ucsm</span><span class="s2">.</span><span class="s1">seguimiento</span>
+
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Log</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">ucsm</span><span class="s2">.</span><span class="s1">seguimiento</span><span class="s2">.</span><span class="s1">databinding</span><span class="s2">.</span><span class="s1">ActivityMainBinding</span>
+
+<span class="s0">class </span><span class="s1">MainActivity : AppCompatActivity</span><span class="s2">() {</span>
+
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">binding: ActivityMainBinding</span>
+    <span class="s1">private </span><span class="s0">val </span><span class="s1">TAG </span><span class="s2">= </span><span class="s3">&quot;Ciclo de Vida&quot;</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState: Bundle?</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">)</span>
+
+        <span class="s1">binding </span><span class="s2">= </span><span class="s1">ActivityMainBinding</span><span class="s2">.</span><span class="s1">inflate</span><span class="s2">(</span><span class="s1">layoutInflater</span><span class="s2">)</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">binding</span><span class="s2">.</span><span class="s1">root</span><span class="s2">)</span>
+
+        <span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s1">TAG</span><span class="s2">, </span><span class="s3">&quot;En el evento onCreate()&quot;</span><span class="s2">)</span>
+
+        <span class="s1">binding</span><span class="s2">.</span><span class="s1">btnMostrar</span><span class="s2">.</span><span class="s1">setOnClickListener </span><span class="s2">{</span>
+            <span class="s0">val </span><span class="s1">intent </span><span class="s2">= </span><span class="s1">Intent</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s1">SegundaActividad::</span><span class="s0">class</span><span class="s2">.</span><span class="s1">java</span><span class="s2">)</span>
+            <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">intent</span><span class="s2">)</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onStart</span><span class="s2">()   { </span><span class="s0">super</span><span class="s2">.</span><span class="s1">onStart</span><span class="s2">();   </span><span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s1">TAG</span><span class="s2">, </span><span class="s3">&quot;onStart()&quot;</span><span class="s2">) }</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onRestart</span><span class="s2">(){ </span><span class="s0">super</span><span class="s2">.</span><span class="s1">onRestart</span><span class="s2">(); </span><span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s1">TAG</span><span class="s2">, </span><span class="s3">&quot;onRestart()&quot;</span><span class="s2">) }</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onResume</span><span class="s2">() { </span><span class="s0">super</span><span class="s2">.</span><span class="s1">onResume</span><span class="s2">();  </span><span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s1">TAG</span><span class="s2">, </span><span class="s3">&quot;onResume()&quot;</span><span class="s2">) }</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onPause</span><span class="s2">()  { </span><span class="s0">super</span><span class="s2">.</span><span class="s1">onPause</span><span class="s2">();   </span><span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s1">TAG</span><span class="s2">, </span><span class="s3">&quot;onPause()&quot;</span><span class="s2">) }</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onStop</span><span class="s2">()   { </span><span class="s0">super</span><span class="s2">.</span><span class="s1">onStop</span><span class="s2">();    </span><span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s1">TAG</span><span class="s2">, </span><span class="s3">&quot;onStop()&quot;</span><span class="s2">) }</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onDestroy</span><span class="s2">(){ </span><span class="s0">super</span><span class="s2">.</span><span class="s1">onDestroy</span><span class="s2">(); </span><span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s1">TAG</span><span class="s2">, </span><span class="s3">&quot;onDestroy()&quot;</span><span class="s2">) }</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
