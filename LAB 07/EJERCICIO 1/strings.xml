@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">
+        ArchivoExterno
+    </string>
+
+    <string name="ingresa">
+        Ingresa algún texto
+    </string>
+
+    <string name="save">
+        Guardar Archivo
+    </string>
+
+    <string name="load">
+        Cargar Archivo
+    </string>
+
+</resources>

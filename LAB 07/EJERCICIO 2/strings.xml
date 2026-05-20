@@ -1,0 +1,35 @@
+<resources>
+
+    <string name="app_name">
+        GimnasioCRUD
+    </string>
+
+    <string name="txt_codigo">
+        Código del cliente
+    </string>
+
+    <string name="txt_nombre">
+        Nombre del cliente
+    </string>
+
+    <string name="txt_membresia">
+        Tipo de membresía
+    </string>
+
+    <string name="btn_registrar">
+        Registrar Cliente
+    </string>
+
+    <string name="btn_buscar">
+        Buscar Cliente
+    </string>
+
+    <string name="btn_modificar">
+        Modificar Cliente
+    </string>
+
+    <string name="btn_eliminar">
+        Eliminar Cliente
+    </string>
+
+</resources>
