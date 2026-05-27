@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">RegistroEstudiantesFB</string>
+
+    <string name="nombre">Nombre</string>
+    <string name="carrera">Carrera</string>
+    <string name="curso">Curso</string>
+
+    <string name="guardar">Guardar</string>
+
+</resources>
